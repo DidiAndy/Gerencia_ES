@@ -45,7 +45,7 @@ if (error != null && error.equals("true")){
 
 <table class="table table-hover">
 <tr><td> <span class="input-group-addon" id="basic-addon1">Fecha:</span>
-  <input type="text" class="form-control" name="txtFecha" value=<%=fechaselected%> aria-describedby="basic-addon1" title="ingrese solo letras"  READONLY></td>
+  <input type="text" class="form-control" name="txtFecha" value=<%=fechaselected%> aria-describedby="basic-addon1"  READONLY></td>
 <td> <span class="input-group-addon" id="basic-addon1">Perspectiva:* </span>
 <select class="form-control" name="txtPerspectiva">
   <option>Financiera</option>
@@ -55,9 +55,9 @@ if (error != null && error.equals("true")){
 </select>
 </td>
 <td> <span class="input-group-addon" id="basic-addon1">Objetivo Estratégico:* </span>
-  <input type="text" class="form-control" name="txtObjetivo" aria-describedby="basic-addon1" title="ingrese solo letras" style="text-transform:uppercase" required></td>
+  <input type="text" class="form-control" name="txtObjetivo" aria-describedby="basic-addon1" style="text-transform:uppercase" required></td>
 <td> <span class="input-group-addon" id="basic-addon1"> Indicador* </span>
-  <input type="text" class="form-control" name="txtIndicador" aria-describedby="basic-addon1" title="ingrese solo letras" style="text-transform:uppercase" required></td>
+  <input type="text" class="form-control" name="txtIndicador" aria-describedby="basic-addon1"  style="text-transform:uppercase" required></td>
 </tr>
 <tr>
 <td> <span class="input-group-addon" id="basic-addon1">Tendencia* </span>
