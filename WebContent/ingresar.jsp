@@ -90,7 +90,7 @@ if (error != null && error.equals("true")){
 <td> <span class="input-group-addon" id="basic-addon1"> Línea Base:* </span>
   <input type="number" class="form-control" name="txtLBase" pattern="[0-9]" aria-describedby="basic-addon1" title="ingrese solo números" required></td>
 <td> <span class="input-group-addon" id="basic-addon1"> Línea Meta:* </span>
-  <input type="number" class="form-control" name="txtLBase" pattern="[0-9]"  aria-describedby="basic-addon1" title="ingrese solo números" required></td>
+  <input type="number" class="form-control" name="txtLMeta" pattern="[0-9]"  aria-describedby="basic-addon1" title="ingrese solo números" required></td>
 <td> <span class="input-group-addon" id="basic-addon1"> Valor/Resultado:* </span>
   <input type="number" class="form-control" name="txtValor" pattern="[0-9]"  aria-describedby="basic-addon1" title="ingrese solo números" required></td>
 
