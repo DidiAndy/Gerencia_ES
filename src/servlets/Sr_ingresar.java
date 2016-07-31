@@ -43,8 +43,6 @@ public class Sr_ingresar extends HttpServlet {
 		
 		String tende,fecha, perspectiva, objetivo, indicador ,tendencia; String frecuencia, fuente,responsable; int lbase, lmeta, valor;
 		ClsIngreso obj = new ClsIngreso();
-		
-	
 		fecha = request.getParameter("fechas2");
 		perspectiva = request.getParameter("txtPerspectiva");
 		objetivo = request.getParameter("txtObjetivo");

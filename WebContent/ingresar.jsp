@@ -9,9 +9,10 @@
 <body background="imagenes/fondo.jpg">
 
 <%
-String error,msg;
+String error,msg,fechaselected;
 error = request.getParameter("error");
 msg= request.getParameter("msg");
+fechaselected=request.getParameter("fechas2");
 if (error != null && error.equals("true")){
 %>
 	<div class="alert alert-success" role="alert">
@@ -39,7 +40,7 @@ if (error != null && error.equals("true")){
 <center>
 <h3><span class="badge">*Todos los campos son obligatorios.</span></h3>
 </center>
-
+fechaselected
 <table class="table table-hover">
 <tr>
 <td> <span class="input-group-addon" id="basic-addon1">Perspectiva:* </span>
@@ -86,12 +87,11 @@ if (error != null && error.equals("true")){
 <center>
 <input type="submit" name="btnRegistar" class="btn btn-success" role="button" value="Aceptar">
 <a class="btn btn-danger" href="index.jsp" style="font-size:25px; color:red;"  role="button">Cancelar</a>
-
-
 </center>
+</form>
 </div>
 
-</form>
+
 
 
 </body>

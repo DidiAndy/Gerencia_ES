@@ -6,7 +6,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <link rel="stylesheet" type="text/css" href="Estilos/bootstrap.min.css">
-<title>Insert title here</title>
+<title>Lista de BSC</title>
 </head>
 <body>
 
@@ -18,7 +18,9 @@ var=request.getParameter("var");
 
 <div id="wrap">
 <div class="container-fluid">
-
+<center><br>
+<h3><span class="label label-default">Lista del mes</span></h3>
+<br></center>
 <%
 Cls_listar classes=new Cls_listar();
 String x=classes.listar_bsc(var);

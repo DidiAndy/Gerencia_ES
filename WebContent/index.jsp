@@ -67,7 +67,7 @@ if (error != null && error.equals("true")){
 <br>
 <h3><span class="label label-default">INGRESAR MATRIZ BSC</span></h3>
 <br>
-<form action="Sr_ingresar" method="post">
+<form action="ingresar.jsp" method="post">
 <select class=form-control name=fechas2>
 <option>2016-1</option>
 <option>2016-2</option>
