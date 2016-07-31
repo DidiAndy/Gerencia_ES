@@ -11,7 +11,6 @@
 <body>
 
 <%
-//<!--INICIO MENSAJE DEL SERVLET -->
 String var;
 var=request.getParameter("var");
 %>
@@ -19,7 +18,7 @@ var=request.getParameter("var");
 <div id="wrap">
 <div class="container-fluid">
 <center><br>
-<h3><span class="label label-default">Lista del mes</span></h3>
+<h3><span class="label label-default">Lista del mes <%=var%> </span></h3>
 <br></center>
 <%
 Cls_listar classes=new Cls_listar();
