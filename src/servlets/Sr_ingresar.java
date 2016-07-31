@@ -52,6 +52,7 @@ public class Sr_ingresar extends HttpServlet {
 		}else{
 			tende="<";
 		}
+		
 			
 		frecuencia = request.getParameter("txtFrecuencia");
 			

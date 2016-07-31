@@ -53,9 +53,10 @@ if (error != null && error.equals("true")){
   <option>K.I.</option>
 </select>
 </td><td> <span class="input-group-addon" id="basic-addon1">Objetivo Estratégico:* </span>
-  <input type="text" class="form-control" name="txtObjetivo" placeholder="ejem. Michael" aria-describedby="basic-addon1" title="ingrese solo letras" style="text-transform:uppercase" required></td>
+  <input type="text" class="form-control" name="txtObjetivo" aria-describedby="basic-addon1" title="ingrese solo letras" style="text-transform:uppercase" required></td>
 <td> <span class="input-group-addon" id="basic-addon1"> Indicador* </span>
-  <input type="text" class="form-control" name="txtIndicador" placeholder="ejem.  Toledo" aria-describedby="basic-addon1" title="ingrese solo letras" style="text-transform:uppercase" required></td>
+  <input type="text" class="form-control" name="txtIndicador" aria-describedby="basic-addon1" title="ingrese solo letras" style="text-transform:uppercase" required></td>
+
 <td> <span class="input-group-addon" id="basic-addon1">Tendencia* </span>
 <select class="form-control" name="txtTendencia">
   <option>A subir</option>
@@ -71,15 +72,15 @@ if (error != null && error.equals("true")){
 </select>
   </td>
 <td> <span class="input-group-addon" id="basic-addon1">Fuente:*</span>
-  <input type="text" class="form-control" name="txtFuente" placeholder="ejem. La Magdalena" aria-describedby="basic-addon1" style="text-transform:uppercase" required></td>
+  <input type="text" class="form-control" name="txtFuente"  aria-describedby="basic-addon1" style="text-transform:uppercase" required></td>
 <td> <span class="input-group-addon" id="basic-addon1">Responsable:* </span>
-  <input type="text" class="form-control" name="txtResponsable" placeholder="ejem. La Magdalena" aria-describedby="basic-addon1" style="text-transform:uppercase" required></td>
+  <input type="text" class="form-control" name="txtResponsable"  aria-describedby="basic-addon1" style="text-transform:uppercase" required></td>
 <td> <span class="input-group-addon" id="basic-addon1"> Línea Base:* </span>
-  <input type="number" class="form-control" name="txtLBase" pattern="[0-9]" placeholder="ejem. 0985677676" aria-describedby="basic-addon1" title="ingrese solo números" required></td>
+  <input type="number" class="form-control" name="txtLBase" pattern="[0-9]" aria-describedby="basic-addon1" title="ingrese solo números" required></td>
 <td> <span class="input-group-addon" id="basic-addon1"> Línea Meta:* </span>
-  <input type="number" class="form-control" name="txtLBase" pattern="[0-9]" placeholder="ejem. 0985677676" aria-describedby="basic-addon1" title="ingrese solo números" required></td>
+  <input type="number" class="form-control" name="txtLBase" pattern="[0-9]"  aria-describedby="basic-addon1" title="ingrese solo números" required></td>
 <td> <span class="input-group-addon" id="basic-addon1"> Valor/Resultado:* </span>
-  <input type="number" class="form-control" name="txtValor" pattern="[0-9]" placeholder="ejem. 0985677676" aria-describedby="basic-addon1" title="ingrese solo números" required></td>
+  <input type="number" class="form-control" name="txtValor" pattern="[0-9]"  aria-describedby="basic-addon1" title="ingrese solo números" required></td>
 
 </tr>
 </table>
