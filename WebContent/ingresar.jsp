@@ -48,7 +48,7 @@ if (error != null && error.equals("true")){
 <tr>
 
 <td> <span class="input-group-addon" id="basic-addon1">Fecha:</span>
-  <input type="text" class="form-control" name="txtFecha" value=<%=fechaselected%> aria-describedby="basic-addon1"  READONLY></td>
+<input type="text" class="form-control" name="txtFecha" value=<%=fechaselected%> aria-describedby="basic-addon1"  READONLY></td>
 <td> <span class="input-group-addon" id="basic-addon1">Perspectiva:* </span>
 <select class="form-control" name="txtPerspectiva">
   <option>Financiera</option>
@@ -57,14 +57,16 @@ if (error != null && error.equals("true")){
   <option>K.I.</option>
 </select>
 </td>
+
 <td> <span class="input-group-addon" id="basic-addon1">Objetivo Estratégico:* </span>
   <input type="text" class="form-control" name="txtObjetivo" aria-describedby="basic-addon1" style="text-transform:uppercase" required></td>
+  
 <td> <span class="input-group-addon" id="basic-addon1"> Indicador* </span>
   <input type="text" class="form-control" name="txtIndicador" aria-describedby="basic-addon1"  style="text-transform:uppercase" required></td>
 </tr>
+
+
 <tr>
-<div class="col-md-4">
-</div>
 <td> <span class="input-group-addon" id="basic-addon1">Tendencia* </span>
 <select class="form-control" name="txtTendencia">
   <option>A subir</option>
@@ -84,9 +86,9 @@ if (error != null && error.equals("true")){
 <td> <span class="input-group-addon" id="basic-addon1">Responsable:* </span>
   <input type="text" class="form-control" name="txtResponsable"  aria-describedby="basic-addon1" style="text-transform:uppercase" required></td>
 </tr>
+
+
 <tr>
-<div class="col-md-4">
-</div>
 <td> <span class="input-group-addon" id="basic-addon1"> Línea Base:* </span>
   <input type="number" class="form-control" name="txtLBase" pattern="[0-9]" aria-describedby="basic-addon1" title="ingrese solo números" required></td>
 <td> <span class="input-group-addon" id="basic-addon1"> Línea Meta:* </span>
