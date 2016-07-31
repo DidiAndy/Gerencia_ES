@@ -46,7 +46,6 @@ if (error != null && error.equals("true")){
 <table class="table table-hover">
 <tr><td> <span class="input-group-addon" id="basic-addon1">Fecha:</span>
   <input type="text" class="form-control" name="txtFecha" value=<%=fechaselected%> aria-describedby="basic-addon1" title="ingrese solo letras"  READONLY></td>
-<td> 
 <td> <span class="input-group-addon" id="basic-addon1">Perspectiva:* </span>
 <select class="form-control" name="txtPerspectiva">
   <option>Financiera</option>
@@ -54,11 +53,13 @@ if (error != null && error.equals("true")){
   <option>Procesos</option>
   <option>K.I.</option>
 </select>
-</td><td> <span class="input-group-addon" id="basic-addon1">Objetivo Estratégico:* </span>
+</td>
+<td> <span class="input-group-addon" id="basic-addon1">Objetivo Estratégico:* </span>
   <input type="text" class="form-control" name="txtObjetivo" aria-describedby="basic-addon1" title="ingrese solo letras" style="text-transform:uppercase" required></td>
 <td> <span class="input-group-addon" id="basic-addon1"> Indicador* </span>
   <input type="text" class="form-control" name="txtIndicador" aria-describedby="basic-addon1" title="ingrese solo letras" style="text-transform:uppercase" required></td>
-
+</tr>
+<tr>
 <td> <span class="input-group-addon" id="basic-addon1">Tendencia* </span>
 <select class="form-control" name="txtTendencia">
   <option>A subir</option>
@@ -77,6 +78,8 @@ if (error != null && error.equals("true")){
   <input type="text" class="form-control" name="txtFuente"  aria-describedby="basic-addon1" style="text-transform:uppercase" required></td>
 <td> <span class="input-group-addon" id="basic-addon1">Responsable:* </span>
   <input type="text" class="form-control" name="txtResponsable"  aria-describedby="basic-addon1" style="text-transform:uppercase" required></td>
+</tr>
+<tr>
 <td> <span class="input-group-addon" id="basic-addon1"> Línea Base:* </span>
   <input type="number" class="form-control" name="txtLBase" pattern="[0-9]" aria-describedby="basic-addon1" title="ingrese solo números" required></td>
 <td> <span class="input-group-addon" id="basic-addon1"> Línea Meta:* </span>
@@ -90,8 +93,8 @@ if (error != null && error.equals("true")){
 <hr>
 <br><br>
 <center>
-<input type="submit" name="btnRegistar" class="btn btn-success" role="button" value="Aceptar">
-<a class="btn btn-danger" href="index.jsp" style="font-size:25px; color:red;"  role="button">Cancelar</a>
+<input type="submit" name="btnRegistar" class="btn btn-success" role="button"  style="font-size:15px;"" value="Aceptar">
+<a class="btn btn-danger" href="index.jsp" style="font-size:15px; color:red;"  role="button">Cancelar</a>
 </center>
 </form>
 </div>
