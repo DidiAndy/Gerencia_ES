@@ -66,12 +66,12 @@ public class Sr_ingresar extends HttpServlet {
 			 
 			if(obj.agregarDatos(fecha, perspectiva, objetivo, indicador, tende, frecuencia, fuente, responsable, lbase, lmeta, valor)){
 				System.out.println("Pasooff"+fecha+ perspectiva+ objetivo+ indicador+tendencia+ tende+ frecuencia+ fuente+ responsable+ lbase+ lmeta+ valor);
-				response.sendRedirect("ingresar.jsp?error=true&msg=Datos Ingresados");
+				response.sendRedirect("ingresar.jsp?error=true&msg=Datos Ingresados&fechas2="+fecha+"");
 			}else{
-				response.sendRedirect("ingresar.jsp?error=false&msg=Verifique que los datos que ingresa no sean iguales \n al mes y objetivo estr. que desea ingresar");
+				response.sendRedirect("ingresar.jsp?error=false&msg=Verifique que los datos que ingresa no sean iguales \n al mes y objetivo estr. que desea ingresar&fechas2="+fecha+"");
 			}
 		}else{
-			response.sendRedirect("ingresar.jsp?error=false&msg=Datos vacios");
+			response.sendRedirect("ingresar.jsp?error=false&msg=Datos vacios&fechas2="+fecha+"");
 			}
 		
 	
