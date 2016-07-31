@@ -4,6 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<link rel="stylesheet" type="text/css" href="Estilos/bootstrap.min.css">
 <title>Ingresar Datos</title>
 </head>
 <body background="imagenes/fondo.jpg">
@@ -17,18 +18,19 @@ if (error != null && error.equals("true")){
 %>
 	<div class="alert alert-success" role="alert">
 	  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-	  <strong>ESTADO</strong>.<%=" "+msg%>
+	  <strong>ESTADO</strong>.<%=" Proceso realizado con exito"%>
 	</div>
 <%
 }if(error != null && error.equals("false")){
 	%>
 	<div class="alert alert-danger" role="alert">
 	  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-	  <strong>ESTADO</strong>.<%=" "+msg%>
+	  <strong>ESTADO</strong>.<%=" Se ha producido un error, por favor actualize y vuelva a intentar"%>
 	</div>
 <%
 }
 %>
+<!--FIN MENSAJE DEL SERVLET -->
 <div class="row">
 
 	<center><br>
@@ -96,6 +98,8 @@ if (error != null && error.equals("true")){
 
 
 
-
+<!-- Zona JQuery y JS -->
+    <script src="Estilos/jquery-2.1.3.min.js"></script>
+    <script src="Estilos/bootstrap.min.js"></script>
 </body>
 </html>
