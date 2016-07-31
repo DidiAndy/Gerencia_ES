@@ -7,7 +7,7 @@
 <link rel="stylesheet" type="text/css" href="Estilos/bootstrap.min.css">
 <title>index</title>
 </head>
-<body>
+<body background="imagenes/fondo.jpg">
 <%
 String error, msg;
 error=request.getParameter("error");

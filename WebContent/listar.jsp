@@ -8,7 +8,7 @@
 <link rel="stylesheet" type="text/css" href="Estilos/bootstrap.min.css">
 <title>Lista de BSC</title>
 </head>
-<body>
+<body background="imagenes/fondo.jpg">
 
 <%
 String var;
