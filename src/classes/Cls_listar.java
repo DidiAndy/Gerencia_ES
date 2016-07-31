@@ -3,34 +3,30 @@ package classes;
 import java.sql.ResultSet;
 
 import connection.ClsConexion;
-
 public class Cls_listar {
-	public String listar_fechas(){
-		String sql="select fecha from tb_fechas;";
+	public int validar_PK(String fecha, String objetivo){
+		int retorna=1;
+		//retornar 1 en caso de que las PK NO se repitan en la base
+		String sql="select count(tb_datos.fk_fecha) from tb_datos where tb_datos.fk_fecha='"+fecha+"' and tb_datos.obj_estrat='"+objetivo+"';";
 		ClsConexion con = new ClsConexion();
 		ResultSet rs=null;
-		String fecha="<select class=form-control name=fechas>"
-				+ "<option> </option>";
-				try{
-				rs=con.Consulta(sql);
-				while(rs.next()){
-					fecha+="<option>"+rs.getString(1)+"</option>";
-				}
-				
-				}catch(Exception e){
-					e.getMessage();
-				}
-				fecha+="</select>";
-				try {
-					rs.close();
-					con.getConexion().close();
-				} catch (Exception e) {
-					// TODO: handle exception
-				}
-				System.out.println(fecha);
-				return fecha;
-	}	
-
+		try{
+			rs=con.Consulta(sql);
+			while(rs.next()){
+				retorna=rs.getInt(1);
+			}
+		}catch(Exception e){
+		e.getMessage();	
+		}
+	//nuevo codigo cerrar sesion
+			try {
+				rs.close();
+				con.getConexion().close();
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+		return retorna;
+	}
 	public String listar_bsc(String fecha){
 		String sql="select tb_datos.fk_fecha,tb_datos.perespectiva,tb_datos.obj_estrat,tb_datos.indicador,tb_datos.tendencia,tb_datos.frecuencia,tb_datos.fuente,tb_datos.responsable,tb_datos.lb,tb_datos.lm,tb_datos.valor from tb_datos,tb_fechas where tb_fechas.fecha=tb_datos.fk_fecha and tb_datos.fk_fecha='"+fecha+"' order by tb_datos.perespectiva;";
 		ClsConexion con = new ClsConexion();

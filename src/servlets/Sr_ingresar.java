@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import classes.ClsIngreso;
+import classes.Cls_listar;
 
 
 /**
@@ -40,6 +41,7 @@ public class Sr_ingresar extends HttpServlet {
 		// TODO Auto-generated method stub
 		String tende,fecha, perspectiva, objetivo, indicador ,tendencia; String frecuencia, fuente,responsable; int lbase, lmeta, valor;
 		ClsIngreso obj = new ClsIngreso();
+		Cls_listar obj2=new Cls_listar();
 		fecha = request.getParameter("txtFecha");//PK
 		perspectiva = request.getParameter("txtPerspectiva");
 		objetivo = request.getParameter("txtObjetivo");//PK
@@ -61,19 +63,23 @@ public class Sr_ingresar extends HttpServlet {
 		lmeta = Integer.parseInt(request.getParameter("txtLBase"));
 		valor = Integer.parseInt(request.getParameter("txtValor"));
 			
-				
+		int valor_de_PK=1;
+		valor_de_PK=obj2.validar_PK(fecha,objetivo);
+		
+		if(valor_de_PK==0){
 		if(objetivo!=null && indicador!=null && fuente!=null  && responsable!=null){
 			 
 			if(obj.agregarDatos(fecha, perspectiva, objetivo, indicador, tende, frecuencia, fuente, responsable, lbase, lmeta, valor)){
-				System.out.println("Pasooff"+fecha+ perspectiva+ objetivo+ indicador+tendencia+ tende+ frecuencia+ fuente+ responsable+ lbase+ lmeta+ valor);
 				response.sendRedirect("ingresar.jsp?error=true&msg=Datos Ingresados&fechas2="+fecha+"");
 			}else{
-				response.sendRedirect("ingresar.jsp?error=false&msg=Verifique que los datos que ingresa no sean iguales \n al mes y objetivo estr. que desea ingresar&fechas2="+fecha+"");
+				response.sendRedirect("ingresar.jsp?error=false&msg=No se ha podido ingresar los datos intente de nuevo&fechas2="+fecha+"");
 			}
 		}else{
 			response.sendRedirect("ingresar.jsp?error=false&msg=Datos vacios&fechas2="+fecha+"");
 			}
-		
+		}else{//jairo
+			response.sendRedirect("ingresar.jsp?error=false&msg=Verifique que los datos que ingresa no sean iguales \n al mes y objetivo estr. que desea ingresar&fechas2="+fecha+"");
+		}
 	
 	
 	

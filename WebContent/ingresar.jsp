@@ -18,14 +18,14 @@ if (error != null && error.equals("true")){
 %>
 	<div class="alert alert-success" role="alert">
 	  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-	  <strong>ESTADO</strong>.<%=" Proceso realizado con exito"%>
+	  <strong>ESTADO</strong>.<%=" "+msg%>
 	</div>
 <%
 }if(error != null && error.equals("false")){
 	%>
 	<div class="alert alert-danger" role="alert">
 	  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-	  <strong>ESTADO</strong>.<%=" Se ha producido un error, por favor actualize y vuelva a intentar"%>
+	  <strong>ESTADO</strong>.<%=" "+msg%>
 	</div>
 <%
 }
