@@ -43,7 +43,7 @@ if (error != null && error.equals("true")){
 
 <table class="table table-hover">
 <tr><td> <span class="input-group-addon" id="basic-addon1">Fecha:</span>
-  <input type="text" class="form-control" name="txtFecha" value=<%=fechaselected%> aria-describedby="basic-addon1" title="ingrese solo letras"  disabled></td>
+  <input type="text" class="form-control" name="txtFecha" value=<%=fechaselected%> aria-describedby="basic-addon1" title="ingrese solo letras"  READONLY></td>
 <td> 
 <td> <span class="input-group-addon" id="basic-addon1">Perspectiva:* </span>
 <select class="form-control" name="txtPerspectiva">
