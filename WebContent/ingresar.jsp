@@ -40,9 +40,11 @@ if (error != null && error.equals("true")){
 <center>
 <h3><span class="badge">*Todos los campos son obligatorios.</span></h3>
 </center>
-fechaselected
+
 <table class="table table-hover">
-<tr>
+<tr><td> <span class="input-group-addon" id="basic-addon1">Fecha:</span>
+  <input type="text" class="form-control" name="txtFecha" value=<%=fechaselected%> aria-describedby="basic-addon1" title="ingrese solo letras"  READONLY></td>
+<td> 
 <td> <span class="input-group-addon" id="basic-addon1">Perspectiva:* </span>
 <select class="form-control" name="txtPerspectiva">
   <option>Financiera</option>

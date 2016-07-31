@@ -38,12 +38,10 @@ public class Sr_ingresar extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		
-		
-		
 		String tende,fecha, perspectiva, objetivo, indicador ,tendencia; String frecuencia, fuente,responsable; int lbase, lmeta, valor;
 		ClsIngreso obj = new ClsIngreso();
-		fecha = request.getParameter("fechas2");
+		fecha = request.getParameter("txtFecha");
+		System.out.println(fecha);
 		perspectiva = request.getParameter("txtPerspectiva");
 		objetivo = request.getParameter("txtObjetivo");
 		indicador = request.getParameter("txtIndicador");
@@ -72,7 +70,7 @@ public class Sr_ingresar extends HttpServlet {
 				System.out.println("Pasooff"+fecha+ perspectiva+ objetivo+ indicador+tendencia+ tende+ frecuencia+ fuente+ responsable+ lbase+ lmeta+ valor);
 				response.sendRedirect("ingresar.jsp?error=true&msg=Datos Ingresados");
 			}else{
-				response.sendRedirect("ingresar.jsp?error=Datos Ingresados Equivocos");
+				response.sendRedirect("ingresar.jsp?error=false&msg=Datos Ingresados Equivocos");
 			}
 		}else{
 			response.sendRedirect("ingresar.jsp?error=false&msg=Datos Ingresados Equivocos Verifique que las claves sean iguales");
