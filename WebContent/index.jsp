@@ -86,9 +86,6 @@ if (error != null && error.equals("true")){
 <input type="submit" name="btnIngresar" class="btn btn-success" role="button" value="Ingresar">
 </center>
 </form>
-
-
-
 </div>
 <div class="col-md-2">
 <!-- no PONER NADA AQUI -->
