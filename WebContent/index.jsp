@@ -90,10 +90,14 @@ if (error != null && error.equals("true")){
 <div class="col-md-2">
 <!-- no PONER NADA AQUI -->
 </div>
+
 </div><!--Container -->
 </div><!--Wrap-->
-
-
+<br>
+<br><br>
+<center>
+<img src="imagenes/fondos.gif"  width="300px" height="310px" alt="BSC" style="border-style:dotted;border-width:10px;"/>
+</center>
 
 <!-- Zona JQuery y JS -->
     <script src="Estilos/jquery-2.1.3.min.js"></script>
