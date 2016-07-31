@@ -40,10 +40,9 @@ public class Sr_ingresar extends HttpServlet {
 		// TODO Auto-generated method stub
 		String tende,fecha, perspectiva, objetivo, indicador ,tendencia; String frecuencia, fuente,responsable; int lbase, lmeta, valor;
 		ClsIngreso obj = new ClsIngreso();
-		fecha = request.getParameter("txtFecha");
-		System.out.println(fecha);
+		fecha = request.getParameter("txtFecha");//PK
 		perspectiva = request.getParameter("txtPerspectiva");
-		objetivo = request.getParameter("txtObjetivo");
+		objetivo = request.getParameter("txtObjetivo");//PK
 		indicador = request.getParameter("txtIndicador");
 		tendencia = request.getParameter("txtTendencia");
 		
@@ -55,25 +54,29 @@ public class Sr_ingresar extends HttpServlet {
 		
 			
 		frecuencia = request.getParameter("txtFrecuencia");
-			
 		fuente=request.getParameter("txtFuente");
 		responsable = request.getParameter("txtResponsable");
 		
 		lbase = Integer.parseInt(request.getParameter("txtLBase"));
 		lmeta = Integer.parseInt(request.getParameter("txtLBase"));
 		valor = Integer.parseInt(request.getParameter("txtValor"));
-		
-		
-		
-		if(objetivo != null && indicador != null  && fuente != null  && responsable != null ){
+			
+				
+		if(objetivo!=null && indicador!=null && fuente!=null  && responsable!=null){
 			 
 			if(obj.agregarDatos(fecha, perspectiva, objetivo, indicador, tende, frecuencia, fuente, responsable, lbase, lmeta, valor)){
 				System.out.println("Pasooff"+fecha+ perspectiva+ objetivo+ indicador+tendencia+ tende+ frecuencia+ fuente+ responsable+ lbase+ lmeta+ valor);
 				response.sendRedirect("ingresar.jsp?error=true&msg=Datos Ingresados");
 			}else{
-				response.sendRedirect("ingresar.jsp?error=false&msg=Datos Ingresados Equivocos");
+				response.sendRedirect("ingresar.jsp?error=false&msg=Verifique que los datos que ingresa no sean iguales \n al mes y objetivo estr. que desea ingresar");
 			}
 		}else{
-			response.sendRedirect("ingresar.jsp?error=false&msg=Datos Ingresados Equivocos Verifique que las claves sean iguales");
+			response.sendRedirect("ingresar.jsp?error=false&msg=Datos vacios");
 			}
-		}}
+		
+	
+	
+	
+	
+	
+	}}
