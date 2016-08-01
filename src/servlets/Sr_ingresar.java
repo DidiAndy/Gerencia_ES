@@ -1,6 +1,10 @@
 package servlets;
 
 import java.io.IOException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -42,7 +46,14 @@ public class Sr_ingresar extends HttpServlet {
 		String tende,fecha, perspectiva, objetivo, indicador ,tendencia; String frecuencia, fuente,responsable; int lbase, lmeta, valor;
 		ClsIngreso obj = new ClsIngreso();
 		Cls_listar obj2=new Cls_listar();
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM");//date format
+		String date2=null;
+		Date date = new Date();
+		
 		fecha = request.getParameter("txtFecha");//PK
+		
+		date2=sdf.format(date);
+		System.out.println("fecha ingresado: "+fecha+" fecha del sistema "+date2);
 		perspectiva = request.getParameter("txtPerspectiva");
 		objetivo = request.getParameter("txtObjetivo");//PK
 		indicador = request.getParameter("txtIndicador");

@@ -90,6 +90,7 @@ out.print(x);
        <h2><span class="label label-default" id="gridSystemModalLabel">SEM&Aacute;FORO DE VARIABLES GLOBALES</span></h2>
       </div>
       <div class="modal-body">
+      <span class="badge"><%="Presentación del año y mes: "+var%></span>
   <div class="form-group">
            <%
   String x2=classes.estadistic_morethan(var);

@@ -80,15 +80,15 @@ if (error != null && error.equals("true")){
 <br>
 <form action="Sr_listar" method="post">
 <select class="form-control" name="fechas">
-<option>2016-1</option>
-<option>2016-2</option>
-<option>2016-3</option>
-<option>2016-4</option>
-<option>2016-5</option>
-<option>2016-6</option>
-<option>2016-7</option>
-<option>2016-8</option>
-<option>2016-9</option>
+<option>2016-01</option>
+<option>2016-02</option>
+<option>2016-03</option>
+<option>2016-04</option>
+<option>2016-05</option>
+<option>2016-06</option>
+<option>2016-07</option>
+<option>2016-08</option>
+<option>2016-09</option>
 <option>2016-10</option>
 <option>2016-11</option>
 <option>2016-12</option>
@@ -106,15 +106,15 @@ if (error != null && error.equals("true")){
 <br>
 <form action="ingresar.jsp" method="post">
 <select class="form-control" name="fechas2">
-<option>2016-1</option>
-<option>2016-2</option>
-<option>2016-3</option>
-<option>2016-4</option>
-<option>2016-5</option>
-<option>2016-6</option>
-<option>2016-7</option>
-<option>2016-8</option>
-<option>2016-9</option>
+<option>2016-01</option>
+<option>2016-02</option>
+<option>2016-03</option>
+<option>2016-04</option>
+<option>2016-05</option>
+<option>2016-06</option>
+<option>2016-07</option>
+<option>2016-08</option>
+<option>2016-09</option>
 <option>2016-10</option>
 <option>2016-11</option>
 <option>2016-12</option>

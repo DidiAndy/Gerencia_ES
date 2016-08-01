@@ -152,6 +152,7 @@ public class Cls_listar {
 				}//fin total de if else
 			}//fin while
 			//poner aqui abajo todos los semaforos globales para > y <
+			acumulada+="<td><h2><span class=\"label label-default\" id=\"gridSystemModalLabel\">Promedio tendencia a subir</span></h2></td></tr> ";
 			respgreenup=(totalgreen/sumagreen)*100;
 			//green >
 			acumulada+="<td><div class=\"progress\"><div class=\""+green+"\""
@@ -173,7 +174,7 @@ public class Cls_listar {
 			
 			
 			
-			
+			acumulada+="<td><h2><span class=\"label label-default\" id=\"gridSystemModalLabel\">Promedio tendencia a bajar</span></h2></td></tr> ";
 			
 			respgreendown=(sumagreen2/totalgreen2)*100;
 			//green <
