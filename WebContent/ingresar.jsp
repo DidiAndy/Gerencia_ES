@@ -5,6 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <link rel="stylesheet" type="text/css" href="Estilos/bootstrap.min.css">
+
 <title>Ingresar Datos</title>
 </head>
 <body background="imagenes/fondo.jpg">
@@ -68,7 +69,7 @@ if (error != null && error.equals("true")){
 
 <div class="row">
 	<center><br>
-<h3><span class="label label-default">REGISTRO USUARIO</span></h3>
+<h3><span class="label label-default">REGISTRO MATRIZ</span></h3>
 <br></center> 
 
 

@@ -5,6 +5,8 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <link rel="stylesheet" type="text/css" href="Estilos/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="Estilos/bootstrap.min.js">
+
 <title>index</title>
 </head>
 <body background="imagenes/fondo.jpg">
@@ -46,7 +48,7 @@ if (error != null && error.equals("true")){
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="index.jsp">Home <span class="glyphicon glyphicon-home"></span></a></li>
+        <li class="active"><a href="index.jsp">Home <span class="glyphicon glyphicon-home" aria-hidden="true"></span>  </a></li>
       </ul>
       <form action="Sr_listar" method="post" class="navbar-form navbar-right">
         <div class="form-group">
@@ -67,7 +69,7 @@ if (error != null && error.equals("true")){
 <div id="wrap">
 <div class="container-fluid">
 <center><br>
-<h3><span class="label label-default">Balanced Scorecard</span></h3>
+<h1><span class="label label-default">Balanced Scorecard</span></h1>
 <br></center>
 <div class="col-md-2">
 <!-- no PONER NADA AQUI -->
