@@ -31,7 +31,7 @@ public class Cls_listar {
 		String sql="select tb_datos.fk_fecha,tb_datos.perespectiva,tb_datos.obj_estrat,tb_datos.indicador,tb_datos.tendencia,tb_datos.frecuencia,tb_datos.fuente,tb_datos.responsable,tb_datos.lb,tb_datos.lm,tb_datos.valor from tb_datos,tb_fechas where tb_fechas.fecha=tb_datos.fk_fecha and tb_datos.fk_fecha='"+fecha+"' order by tb_datos.perespectiva;";
 		ClsConexion con = new ClsConexion();
 		ResultSet rs=null;
-		String green="progress-bar progress-bar-success",yellow="progress-bar progress-bar-warning",red="progress-bar progress-bar-danger";
+		String green="progress-bar progress-bar-success progress-bar-striped",yellow="progress-bar progress-bar-warning progress-bar-striped",red="progress-bar progress-bar-danger progress-bar-striped";
 		String acumulada="<table class=\"table table-striped\"> ";
 		acumulada+=" <thead><tr><th>Fecha</th><th>Perspectiva</th><th>Obj.estrat&eacute;gico</th><th>Indicador</th><th>Tend.</th><th>Frec.</th><th>Fuente</th><th>Resp.</th><th>L.B.</th><th>L.M.</th><th>Val</th><th>Luz</th></tr></thead><tbody> ";
 		try{

@@ -136,6 +136,24 @@ if (error != null && error.equals("true")){
 <img src="imagenes/fondos.gif"  width="300px" height="310px" alt="BSC" style="border-style:dotted;border-width:10px;"/>
 </center>
 
+
+
+<br><br><br>
+<div id="footer" style="text-align: center; font-size: 15px; border: 5px solid #A8A59C; color:#6E6E6E;background-color:#F2F2F2">
+<br>
+
+Desarrollado por la Carrera: Ingeniería de Sistemas
+<br>
+Universidad Politécnica Salesiana
+<br>
+      Sede Quito - Campus Sur
+<br>
+Sistemas
+<br>
+Quito - Ecuador 2016
+<br>
+<br>
+</div>  
 <!-- Zona JQuery y JS -->
     <script src="Estilos/jquery-2.1.3.min.js"></script>
     <script src="Estilos/bootstrap.min.js"></script>
