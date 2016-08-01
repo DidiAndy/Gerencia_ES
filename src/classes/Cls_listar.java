@@ -111,7 +111,8 @@ public class Cls_listar {
 		String green="progress-bar progress-bar-success progress-bar-striped",yellow="progress-bar progress-bar-warning progress-bar-striped",red="progress-bar progress-bar-danger progress-bar-striped";
 		String acumulada="<table class=\"table table-striped\"> ";
 		acumulada+=" <thead><tr><th>Progreso general</th><th>F&oacute;rmula aplicada</th></tr></thead> ";
-		double sumagreen=0,totalgreen=0,sumayellow=0,totalyellow=0,sumared=0,totalred=0;
+		double sumagreen=0,totalgreen=0,sumayellow=0,totalyellow=0,sumared=0,totalred=0;//para>
+		double sumagreen2=0,totalgreen2=0,sumayellow2=0,totalyellow2=0,sumared2=0,totalred2=0;//para <
 		double respgreenup=0,respgreendown=0,respyellowup=0,respyellowdown=0,respredup=0,respreddown=0;
 		try{
 			rs=con.Consulta(sql);
@@ -136,25 +137,16 @@ public class Cls_listar {
 					//tiende a bajar
 					double lb=rs.getInt(9),lm=rs.getInt(10),value=rs.getInt(11);
 					if(value<lm){
-						//green <
-						acumulada+="<td><div class=\"progress\"><div class=\""+green+"\""
-								+ " role=\"progressbar\" aria-valuenow=\"100\"aria-valuemin=\"0\" aria-valuemax=\"100\""
-								+ " style=\"width:100%\"></div></div>"
-								+ "</td></tr> ";	
+						sumagreen2+=lm;
+						totalgreen2+=value;
 					}
 					if(value>=lm && value<=lb){
-						//yellow <
-						acumulada+="<td><div class=\"progress\"><div class=\""+yellow+"\""
-								+ " role=\"progressbar\" aria-valuenow=\"100\"aria-valuemin=\"0\" aria-valuemax=\"100\""
-								+ " style=\"width:100%\"></div></div>"
-								+ "</td></tr> ";	
+						sumayellow2=sumayellow2+lb+lm;
+						totalyellow2=+value;
 					}
 					if(value>lb){
-						//red <
-						acumulada+="<td><div class=\"progress\"><div class=\""+red+"\""
-								+ " role=\"progressbar\" aria-valuenow=\"100\"aria-valuemin=\"0\" aria-valuemax=\"100\""
-								+ " style=\"width:100%\"></div></div>"
-								+ "</td></tr> ";	
+						sumared2+=lm;
+						totalred2+=value;
 					}
 					
 				}//fin total de if else
@@ -177,11 +169,35 @@ public class Cls_listar {
 			acumulada+="<td><div class=\"progress\"><div class=\""+red+"\""
 					+ " role=\"progressbar\" aria-valuenow=\"100\"aria-valuemin=\"0\" aria-valuemax=\"100\""
 					+ " style=\"width:100%\">"+respredup+"</div></div>"
-					+ "</td><td>"+respredup+"=("+totalred+"/"+sumared+")*100"+"</td></tr> ";	
+					+ "</td><td>"+respredup+"=("+totalred+"/"+sumared+")*100"+"</td></tr> ";
+			
+			
+			
+			
+			
+			respgreendown=(sumagreen2/totalgreen2)*100;
+			//green <
+			acumulada+="<td><div class=\"progress\"><div class=\""+green+"\""
+					+ " role=\"progressbar\" aria-valuenow=\"100\"aria-valuemin=\"0\" aria-valuemax=\"100\""
+					+ " style=\"width:100%\">"+respgreendown+"</div></div>"
+					+ "</td><td>"+respgreendown+"=("+sumagreen2+"/"+totalgreen2+")*100"+"</td></tr> ";
+			respyellowdown=(totalyellow2/(sumayellow2/2))*100;
+			//yellow <
+			acumulada+="<td><div class=\"progress\"><div class=\""+yellow+"\""
+					+ " role=\"progressbar\" aria-valuenow=\"100\"aria-valuemin=\"0\" aria-valuemax=\"100\""
+					+ " style=\"width:100%\">"+respyellowdown+"</div></div>"
+					+ "</td><td>"+respyellowdown+"=("+sumayellow2+"/("+totalyellow2+"/2))*100"+"</td></tr> ";	
+			respreddown=(sumared2/totalred2)*100;
+			//red <
+			acumulada+="<td><div class=\"progress\"><div class=\""+red+"\""
+					+ " role=\"progressbar\" aria-valuenow=\"100\"aria-valuemin=\"0\" aria-valuemax=\"100\""
+					+ " style=\"width:100%\">"+respreddown+"</div></div>"
+					+ "</td><td>"+respreddown+"=("+sumared2+"/"+totalred2+")*100"+"</td></tr> ";	
+			
 			acumulada+="</table>";
-			System.out.println(sumagreen+"  "+sumayellow+"  "+sumared);
-			System.out.println(totalgreen+"  "+totalyellow+"  "+totalred);
-			System.out.println(respgreenup+"  "+respyellowup+"  "+respredup);
+			System.out.println(sumagreen2+"  "+sumayellow2+"  "+sumared2);
+			System.out.println(totalgreen2+"  "+totalyellow2+"  "+totalred2);
+			System.out.println(respgreendown+"  "+respyellowdown+"  "+respreddown);
 			}catch(Exception e){
 			e.getMessage();	
 			}
