@@ -28,6 +28,8 @@ if (error != null && error.equals("true")){
 	  <strong>ESTADO</strong>.<%=" "+msg%>
 	</div>
 <%
+}if(fechaselected == null){
+	response.sendRedirect("index.jsp");
 }
 %>
 <!--FIN MENSAJE DEL SERVLET -->

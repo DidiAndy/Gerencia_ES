@@ -29,6 +29,41 @@ if (error != null && error.equals("true")){
 }
 %>
 <!--FIN MENSAJE DEL SERVLET -->
+<!-- ESPACIO PARA HEADER INICIA -->
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+  <nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="index.jsp">
+        <img alt="Brand" src="imagenes/logo_ups.png">
+      </a>
+    </div>
+  </div>
+</nav>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="index.jsp">Home <span class="glyphicon glyphicon-home"></span></a></li>
+      </ul>
+      <form action="Sr_listar" method="post" class="navbar-form navbar-right">
+        <div class="form-group">
+          <input type="text" class="form-control" name="fechas" placeholder="2016-9" required>
+        </div>
+        <button type="submit" class="btn btn-default">Buscar a&ntilde;o-mes</button>
+      </form>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+<!-- HEADER TERMINA -->
+
+
+
+
+
+
 <div id="wrap">
 <div class="container-fluid">
 <center><br>
@@ -42,7 +77,7 @@ if (error != null && error.equals("true")){
 <h3><span class="label label-default">LISTAR MATRIZ BSC</span></h3>
 <br>
 <form action="Sr_listar" method="post">
-<select class=form-control name=fechas>
+<select class="form-control" name="fechas">
 <option>2016-1</option>
 <option>2016-2</option>
 <option>2016-3</option>
@@ -68,7 +103,7 @@ if (error != null && error.equals("true")){
 <h3><span class="label label-default">INGRESAR MATRIZ BSC</span></h3>
 <br>
 <form action="ingresar.jsp" method="post">
-<select class=form-control name=fechas2>
+<select class="form-control" name="fechas2">
 <option>2016-1</option>
 <option>2016-2</option>
 <option>2016-3</option>
