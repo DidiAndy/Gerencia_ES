@@ -69,10 +69,6 @@ out.print(x);
 <!-- NO PONER NADA AQUI -->
 </div>
 <div class="row">
-<div class="col-md-4">
-<!-- NO PONER NADA AQUI -->
-</div>
-<div class="col-md-4">
 <br>
 <!-- /////////////////////////////////////////////////////////////////////////////// -->
     <div class="thumbnail">
@@ -85,24 +81,24 @@ out.print(x);
       </div>
     </div>
 
+
 <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="gridSystemModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h2><span class="label label-default" id="gridSystemModalLabel">SEM&Aacute;FORO DE VARIABLES GLOBALES</span></h2>
+       <h2><span class="label label-default" id="gridSystemModalLabel">SEM&Aacute;FORO DE VARIABLES GLOBALES</span></h2>
       </div>
       <div class="modal-body">
   <div class="form-group">
-  <%
+           <%
   String x2=classes.estadistic_morethan(var);
   out.print(x2);
   %>
-
-
+  
   </div>
    <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
       </div>
         <!-- ----------------------------------------------------------------- -->
       </div>
@@ -111,10 +107,6 @@ out.print(x);
 </div><!-- /.modal -->
 <!-- /////////////////////////////////////////////////////////////////////////// -->
 
-</div>
-<div class="col-md-4">
-<!-- NO PONER NADA AQUI -->
-</div>
 </div>
 </div><!--Container -->
 </div><!--Wrap-->

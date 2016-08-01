@@ -110,13 +110,13 @@ public class Cls_listar {
 		ResultSet rs=null;
 		String green="progress-bar progress-bar-success progress-bar-striped",yellow="progress-bar progress-bar-warning progress-bar-striped",red="progress-bar progress-bar-danger progress-bar-striped";
 		String acumulada="<table class=\"table table-striped\"> ";
-		acumulada+=" <thead><tr><th>Progreso general</th><th>Luz</th></tr></thead><tbody> ";
+		acumulada+=" <thead><tr><th>Progreso general</th><th>Luz</th></tr></thead> ";
 		int sumagreen=0,totalgreen=0,sumayellow=0,totalyellow=0,sumared=0,totalred=0;
 		double respgreenup=0,respgreendown=0,respyellowup=0,respyellowdown=0,respredup=0,respreddown=0;
 		try{
 			rs=con.Consulta(sql);
 			while(rs.next()){
-				acumulada+="<tr><td>"+rs.getInt(9)+"</td><td>"+rs.getInt(10)+"</td><td>"+rs.getInt(11)+"</td> ";
+				//acumulada+="<tr><td>"+rs.getInt(9)+"</td><td>"+rs.getInt(10)+"</td><td>"+rs.getInt(11)+"</td> ";
 				if(rs.getString(5).equals(">")){
 					//tiende a subir
 					int lb=rs.getInt(9),lm=rs.getInt(10),value=rs.getInt(11);
@@ -158,28 +158,28 @@ public class Cls_listar {
 					}
 					
 				}//fin total de if else
-				//poner aqui abajo todos los semaforos globales para > y <
-				respgreenup=(totalgreen/sumagreen)*100;
-				//green >
-				acumulada+="<td><div class=\"progress\"><div class=\""+green+"\""
-						+ " role=\"progressbar\" aria-valuenow=\""+respgreenup+"\"aria-valuemin=\"0\" aria-valuemax=\"100\""
-						+ " style=\"width:100%\"></div></div>"
-						+ "</td></tr> ";
-				respyellowup=(totalyellow/(sumayellow/2))*100;
-				//yellow >
-				acumulada+="<td><div class=\"progress\"><div class=\""+yellow+"\""
-						+ " role=\"progressbar\" aria-valuenow=\""+respyellowup+"\"aria-valuemin=\"0\" aria-valuemax=\"100\""
-						+ " style=\"width:100%\"></div></div>"
-						+ "</td></tr> ";	
-				respredup=(totalred/sumared)*100;
-				//red >
-				acumulada+="<td><div class=\"progress\"><div class=\""+red+"\""
-						+ " role=\"progressbar\" aria-valuenow=\""+respredup+"\"aria-valuemin=\"0\" aria-valuemax=\"100\""
-						+ " style=\"width:100%\"></div></div>"
-						+ "</td></tr> ";	
-				
-			}
-			acumulada+="</tbody></table>";
+			}//fin while
+			//poner aqui abajo todos los semaforos globales para > y <
+			respgreenup=(totalgreen/sumagreen)*100;
+			//green >
+			acumulada+="<td><div class=\"progress\"><div class=\""+green+"\""
+					+ " role=\"progressbar\" aria-valuenow=\"100\"aria-valuemin=\"0\" aria-valuemax=\"100\""
+					+ " style=\"width:100%\">"+respgreenup+"</div></div>"
+					+ "</td></tr> ";
+			respyellowup=(totalyellow/(sumayellow/2))*100;
+			//yellow >
+			acumulada+="<td><div class=\"progress\"><div class=\""+yellow+"\""
+					+ " role=\"progressbar\" aria-valuenow=\"100\"aria-valuemin=\"0\" aria-valuemax=\"100\""
+					+ " style=\"width:100%\">"+respyellowup+"</div></div>"
+					+ "</td></tr> ";	
+			respredup=(totalred/sumared)*100;
+			//red >
+			acumulada+="<td><div class=\"progress\"><div class=\""+red+"\""
+					+ " role=\"progressbar\" aria-valuenow=\"100\"aria-valuemin=\"0\" aria-valuemax=\"100\""
+					+ " style=\"width:100%\">"+respredup+"</div></div>"
+					+ "</td></tr> ";	
+			acumulada+="</table>";
+			System.out.println(acumulada);
 			}catch(Exception e){
 			e.getMessage();	
 			}
