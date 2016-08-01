@@ -110,22 +110,22 @@ public class Cls_listar {
 		ResultSet rs=null;
 		String green="progress-bar progress-bar-success progress-bar-striped",yellow="progress-bar progress-bar-warning progress-bar-striped",red="progress-bar progress-bar-danger progress-bar-striped";
 		String acumulada="<table class=\"table table-striped\"> ";
-		acumulada+=" <thead><tr><th>Progreso general</th><th>Luz</th></tr></thead> ";
-		int sumagreen=0,totalgreen=0,sumayellow=0,totalyellow=0,sumared=0,totalred=0;
+		acumulada+=" <thead><tr><th>Progreso general</th><th>F&oacute;rmula aplicada</th></tr></thead> ";
+		double sumagreen=0,totalgreen=0,sumayellow=0,totalyellow=0,sumared=0,totalred=0;
 		double respgreenup=0,respgreendown=0,respyellowup=0,respyellowdown=0,respredup=0,respreddown=0;
 		try{
 			rs=con.Consulta(sql);
 			while(rs.next()){
-				//acumulada+="<tr><td>"+rs.getInt(9)+"</td><td>"+rs.getInt(10)+"</td><td>"+rs.getInt(11)+"</td> ";
+				acumulada+="<tr> ";
 				if(rs.getString(5).equals(">")){
 					//tiende a subir
-					int lb=rs.getInt(9),lm=rs.getInt(10),value=rs.getInt(11);
+					double lb=rs.getInt(9),lm=rs.getInt(10),value=rs.getInt(11);
 					if(value>lm){
 						sumagreen+=lm;
 						totalgreen+=value;
 					}
 					if(value>=lb && value<=lm){
-						sumayellow=+lb+lm;
+						sumayellow=sumayellow+lb+lm;
 						totalyellow=+value;
 					}
 					if(value<lb){
@@ -134,7 +134,7 @@ public class Cls_listar {
 					}
 				}else{
 					//tiende a bajar
-					int lb=rs.getInt(9),lm=rs.getInt(10),value=rs.getInt(11);
+					double lb=rs.getInt(9),lm=rs.getInt(10),value=rs.getInt(11);
 					if(value<lm){
 						//green <
 						acumulada+="<td><div class=\"progress\"><div class=\""+green+"\""
@@ -165,21 +165,23 @@ public class Cls_listar {
 			acumulada+="<td><div class=\"progress\"><div class=\""+green+"\""
 					+ " role=\"progressbar\" aria-valuenow=\"100\"aria-valuemin=\"0\" aria-valuemax=\"100\""
 					+ " style=\"width:100%\">"+respgreenup+"</div></div>"
-					+ "</td></tr> ";
+					+ "</td><td>"+respgreenup+"=("+totalgreen+"/"+sumagreen+")*100"+"</td></tr> ";
 			respyellowup=(totalyellow/(sumayellow/2))*100;
 			//yellow >
 			acumulada+="<td><div class=\"progress\"><div class=\""+yellow+"\""
 					+ " role=\"progressbar\" aria-valuenow=\"100\"aria-valuemin=\"0\" aria-valuemax=\"100\""
 					+ " style=\"width:100%\">"+respyellowup+"</div></div>"
-					+ "</td></tr> ";	
+					+ "</td><td>"+respyellowup+"=("+totalyellow+"/("+sumayellow+"/2))*100"+"</td></tr> ";	
 			respredup=(totalred/sumared)*100;
 			//red >
 			acumulada+="<td><div class=\"progress\"><div class=\""+red+"\""
 					+ " role=\"progressbar\" aria-valuenow=\"100\"aria-valuemin=\"0\" aria-valuemax=\"100\""
 					+ " style=\"width:100%\">"+respredup+"</div></div>"
-					+ "</td></tr> ";	
+					+ "</td><td>"+respredup+"=("+totalred+"/"+sumared+")*100"+"</td></tr> ";	
 			acumulada+="</table>";
-			System.out.println(acumulada);
+			System.out.println(sumagreen+"  "+sumayellow+"  "+sumared);
+			System.out.println(totalgreen+"  "+totalyellow+"  "+totalred);
+			System.out.println(respgreenup+"  "+respyellowup+"  "+respredup);
 			}catch(Exception e){
 			e.getMessage();	
 			}
