@@ -67,7 +67,7 @@ if (error != null && error.equals("true")){
 <div id="wrap">
 <div class="container-fluid">
 <center><br>
-<h3><span class="label label-default">BSC</span></h3>
+<h3><span class="label label-default">Balanced Scorecard</span></h3>
 <br></center>
 <div class="col-md-2">
 <!-- no PONER NADA AQUI -->

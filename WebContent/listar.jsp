@@ -11,6 +11,14 @@
 </head>
 <body>
 
+<%
+String var;
+var=request.getParameter("var");
+if(var == null){
+	response.sendRedirect("index.jsp");
+}
+%>
+<!-- ESPACIO PARA HEADER INICIA -->
 <nav class="navbar navbar-default">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -38,11 +46,7 @@
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
-
-<%
-String var;
-var=request.getParameter("var");
-%>
+<!-- HEADER TERMINA -->
 
 <div id="wrap">
 <div class="container-fluid">
