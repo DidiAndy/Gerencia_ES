@@ -53,7 +53,10 @@ public class Sr_ingresar extends HttpServlet {
 		fecha = request.getParameter("txtFecha");//PK
 		
 		date2=sdf.format(date);
-		System.out.println("fecha ingresado: "+fecha+" fecha del sistema "+date2);
+		String xx=String.valueOf(date2);
+		
+		System.out.println("fecha ingresado: "+fecha+" fecha del sistema "+xx);
+		
 		perspectiva = request.getParameter("txtPerspectiva");
 		objetivo = request.getParameter("txtObjetivo");//PK
 		indicador = request.getParameter("txtIndicador");
@@ -90,7 +93,7 @@ public class Sr_ingresar extends HttpServlet {
 		
 		int valor_de_PK=1;
 		valor_de_PK=obj2.validar_PK(fecha,objetivo);
-		
+	if(fecha.equals(xx)){	
 		if(valor_de_PK==0){
 if(verificar_valores==1){		
 if(objetivo!=null && indicador!=null && fuente!=null  && responsable!=null){
@@ -106,7 +109,9 @@ response.sendRedirect("ingresar.jsp?error=false&msg=Datos vacios&fechas2="+fecha
 }else{//jairo else de verificar las PK que no sean iguales
 response.sendRedirect("ingresar.jsp?error=false&msg=Verifique que los datos que ingresa no sean iguales \n al mes y objetivo estr. que desea ingresar&fechas2="+fecha+"");
 }
-	
+	}else{//fechas
+		response.sendRedirect("ingresar.jsp?error=false&msg=La fecha ingresada no es valida, verifique el mes que estamos hoy.&fechas2="+fecha+"");
+	}
 	
 	
 	
