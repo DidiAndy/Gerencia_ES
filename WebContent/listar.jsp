@@ -39,7 +39,7 @@ if(var == null){
       </ul>
       <form action="Sr_listar" method="post" class="navbar-form navbar-right">
         <div class="form-group">
-          <input type="text" class="form-control" name="fechas" placeholder="2016-9" required>
+          <input type="text" class="form-control" name="fechas" placeholder="2016-09" required>
         </div>
         <button type="submit" class="btn btn-default">Buscar a&ntilde;o-mes</button>
       </form>
