@@ -28,16 +28,17 @@ public class Cls_listar {
 		return retorna;
 	}
 	public String listar_bsc(String fecha){
-		String sql="select tb_datos.fk_fecha,tb_datos.perespectiva,tb_datos.obj_estrat,tb_datos.indicador,tb_datos.tendencia,tb_datos.frecuencia,tb_datos.fuente,tb_datos.responsable,tb_datos.lb,tb_datos.lm,tb_datos.valor from tb_datos,tb_fechas where tb_fechas.fecha=tb_datos.fk_fecha and tb_datos.fk_fecha='"+fecha+"' order by tb_datos.perespectiva;";
+		
+		String sql="select tb_datos.fk_fecha,tb_datos.perespectiva,tb_datos.obj_estrat,tb_datos.indicador,tb_datos.tendencia,tb_datos.frecuencia,tb_datos.fuente,tb_datos.responsable,tb_datos.lb,tb_datos.lm,tb_datos.valor,tb_datos.unidad from tb_datos,tb_fechas where tb_fechas.fecha=tb_datos.fk_fecha and tb_datos.fk_fecha='"+fecha+"' order by tb_datos.perespectiva;";
 		ClsConexion con = new ClsConexion();
 		ResultSet rs=null;
 		String green="progress-bar progress-bar-success progress-bar-striped",yellow="progress-bar progress-bar-warning progress-bar-striped",red="progress-bar progress-bar-danger progress-bar-striped";
 		String acumulada="<table class=\"table table-striped\"> ";
-		acumulada+=" <thead><tr><th>Fecha</th><th>Perspectiva</th><th>Obj.estrat&eacute;gico</th><th>Indicador</th><th>Tend.</th><th>Frec.</th><th>Fuente</th><th>Resp.</th><th>L.B.</th><th>L.M.</th><th>Val</th><th>Luz</th></tr></thead><tbody> ";
+		acumulada+=" <thead><tr><th>Fecha</th><th>Perspectiva</th><th>Obj.estrat&eacute;gico</th><th>Indicador</th><th>Tend.</th><th>Frec.</th><th>Fuente</th><th>Resp.</th><th>L.B.</th><th>L.M.</th><th>Val</th><th>Uni.</th><th>Luz</th></tr></thead><tbody> ";
 		try{
 			rs=con.Consulta(sql);
 			while(rs.next()){
-				acumulada+="<tr><td>"+rs.getString(1)+"</td><td>"+rs.getString(2)+"</td><td>"+rs.getString(3)+"</td><td>"+rs.getString(4)+"</td><td>"+rs.getString(5)+"</td><td>"+rs.getString(6)+"</td><td>"+rs.getString(7)+"</td><td>"+rs.getString(8)+"</td><td>"+rs.getInt(9)+"</td><td>"+rs.getInt(10)+"</td><td>"+rs.getInt(11)+"</td> ";
+				acumulada+="<tr><td>"+rs.getString(1)+"</td><td>"+rs.getString(2)+"</td><td>"+rs.getString(3)+"</td><td>"+rs.getString(4)+"</td><td>"+rs.getString(5)+"</td><td>"+rs.getString(6)+"</td><td>"+rs.getString(7)+"</td><td>"+rs.getString(8)+"</td><td>"+rs.getInt(9)+"</td><td>"+rs.getInt(10)+"</td><td>"+rs.getInt(11)+"</td><td>"+rs.getString(12)+"</td> ";
 				if(rs.getString(5).equals(">")){
 					//tiende a subir
 					int lb=rs.getInt(9),lm=rs.getInt(10),value=rs.getInt(11);
@@ -105,7 +106,7 @@ public class Cls_listar {
 	}
 	
 	public String estadistic_morethan(String fecha){
-		String sql="select tb_datos.fk_fecha,tb_datos.perespectiva,tb_datos.obj_estrat,tb_datos.indicador,tb_datos.tendencia,tb_datos.frecuencia,tb_datos.fuente,tb_datos.responsable,tb_datos.lb,tb_datos.lm,tb_datos.valor from tb_datos,tb_fechas where tb_fechas.fecha=tb_datos.fk_fecha and tb_datos.fk_fecha='"+fecha+"' order by tb_datos.perespectiva;";
+		String sql="select tb_datos.fk_fecha,tb_datos.perespectiva,tb_datos.obj_estrat,tb_datos.indicador,tb_datos.tendencia,tb_datos.frecuencia,tb_datos.fuente,tb_datos.responsable,tb_datos.lb,tb_datos.lm,tb_datos.valor,tb_datos.unidad from tb_datos,tb_fechas where tb_fechas.fecha=tb_datos.fk_fecha and tb_datos.fk_fecha='"+fecha+"' order by tb_datos.perespectiva;";
 		ClsConexion con = new ClsConexion();
 		ResultSet rs=null;
 		String green="progress-bar progress-bar-success progress-bar-striped",yellow="progress-bar progress-bar-warning progress-bar-striped",red="progress-bar progress-bar-danger progress-bar-striped";
@@ -120,7 +121,7 @@ public class Cls_listar {
 				acumulada+="<tr> ";
 				if(rs.getString(5).equals(">")){
 					//tiende a subir
-					double lb=rs.getInt(9),lm=rs.getInt(10),value=rs.getInt(11);
+					double lb=rs.getDouble(9),lm=rs.getDouble(10),value=rs.getDouble(11);
 					if(value>lm){
 						sumagreen+=lm;
 						totalgreen+=value;
@@ -135,7 +136,7 @@ public class Cls_listar {
 					}
 				}else{
 					//tiende a bajar
-					double lb=rs.getInt(9),lm=rs.getInt(10),value=rs.getInt(11);
+					double lb=rs.getDouble(9),lm=rs.getDouble(10),value=rs.getDouble(11);
 					if(value<lm){
 						sumagreen2+=lm;
 						totalgreen2+=value;

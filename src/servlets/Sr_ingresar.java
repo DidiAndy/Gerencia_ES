@@ -43,7 +43,7 @@ public class Sr_ingresar extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		String tende,fecha, perspectiva, objetivo, indicador ,tendencia; String frecuencia, fuente,responsable; int lbase, lmeta, valor;
+		String tende,fecha, perspectiva, objetivo, indicador ,tendencia,unidad; String frecuencia, fuente,responsable; double lbase=0, lmeta=0, valor=0;
 		ClsIngreso obj = new ClsIngreso();
 		Cls_listar obj2=new Cls_listar();
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM");//date format
@@ -61,6 +61,7 @@ public class Sr_ingresar extends HttpServlet {
 		objetivo = request.getParameter("txtObjetivo");//PK
 		indicador = request.getParameter("txtIndicador");
 		tendencia = request.getParameter("txtTendencia");
+		unidad = request.getParameter("txtUnidad");
 		
 		if(tendencia.equals("A subir")){
 			tende=">";
@@ -73,9 +74,10 @@ public class Sr_ingresar extends HttpServlet {
 		fuente=request.getParameter("txtFuente");
 		responsable = request.getParameter("txtResponsable");
 		
-		lbase = Integer.parseInt(request.getParameter("txtLBase"));
-		lmeta = Integer.parseInt(request.getParameter("txtLMeta"));
-		valor = Integer.parseInt(request.getParameter("txtValor"));
+		lbase = Double.parseDouble(request.getParameter("txtLBase"));
+		lmeta = Double.parseDouble(request.getParameter("txtLMeta"));
+		valor = Double.parseDouble(request.getParameter("txtValor"));
+		
 		
 		int verificar_valores=0;
 		if(tende.equals(">") && lmeta>lbase){
@@ -97,7 +99,7 @@ public class Sr_ingresar extends HttpServlet {
 		if(valor_de_PK==0){
 if(verificar_valores==1){		
 if(objetivo!=null && indicador!=null && fuente!=null  && responsable!=null){
-if(obj.agregarDatos(fecha, perspectiva, objetivo, indicador, tende, frecuencia, fuente, responsable, lbase, lmeta, valor)){
+if(obj.agregarDatos(fecha, perspectiva, objetivo, indicador, tende, frecuencia, fuente, responsable, lbase, lmeta, valor,unidad)){
 response.sendRedirect("ingresar.jsp?error=true&msg=Datos Ingresados&fechas2="+fecha+"");
 }else{//en caso de que no se ingresen los datos
 response.sendRedirect("ingresar.jsp?error=false&msg=No se ha podido ingresar los datos intente de nuevo&fechas2="+fecha+"");

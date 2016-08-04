@@ -35,8 +35,9 @@ public class Sr_listar extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		String xx=request.getParameter("fechas");
-		response.sendRedirect("listar.jsp?var="+xx+"");
+		String obteniendo=request.getParameter("fechas");
+		
+		response.sendRedirect("listar.jsp?var="+obteniendo+"");
 		
 	}
 
